@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Detail" representedClassName="Detail" syncable="YES">
+        <attribute name="detailCompany" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detailName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="detailVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="details" inverseEntity="Device" syncable="YES"/>
+    </entity>
+    <entity name="Device" representedClassName="Device" syncable="YES">
+        <attribute name="deviceCompany" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviceName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="details" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Detail" inverseName="device" inverseEntity="Detail" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Device" positionX="-261" positionY="-189" width="128" height="88"/>
+        <element name="Detail" positionX="-54" positionY="9" width="128" height="103"/>
+    </elements>
+</model>
