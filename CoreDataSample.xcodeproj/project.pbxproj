@@ -15,11 +15,12 @@
 		EB46B7901BB3FCD500E44E57 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB46B78E1BB3FCD500E44E57 /* LaunchScreen.xib */; };
 		EB46B79C1BB3FCD500E44E57 /* CoreDataSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B79B1BB3FCD500E44E57 /* CoreDataSampleTests.m */; };
 		EB46B7A71BB4015500E44E57 /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B7A61BB4015500E44E57 /* DevicesViewController.m */; };
-		EB46B7AA1BB4017300E44E57 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B7A91BB4017300E44E57 /* DetailsViewController.m */; };
+		EB46B7AA1BB4017300E44E57 /* AddDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B7A91BB4017300E44E57 /* AddDetailsViewController.m */; };
 		EB46B7AD1BB4069700E44E57 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B7AC1BB4069700E44E57 /* BaseViewController.m */; };
 		EB46B7B91BB40E5700E44E57 /* Detail.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B7B61BB40E5700E44E57 /* Detail.m */; };
 		EB46B7BA1BB40E5700E44E57 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = EB46B7B81BB40E5700E44E57 /* Device.m */; };
 		EB46B7BC1BB40F1500E44E57 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB46B7BB1BB40F1500E44E57 /* CoreData.framework */; };
+		EBEE43111BB93B1E00318752 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEE43101BB93B1E00318752 /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +48,8 @@
 		EB46B79B1BB3FCD500E44E57 /* CoreDataSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataSampleTests.m; sourceTree = "<group>"; };
 		EB46B7A51BB4015500E44E57 /* DevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicesViewController.h; sourceTree = "<group>"; };
 		EB46B7A61BB4015500E44E57 /* DevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesViewController.m; sourceTree = "<group>"; };
-		EB46B7A81BB4017300E44E57 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
-		EB46B7A91BB4017300E44E57 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		EB46B7A81BB4017300E44E57 /* AddDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddDetailsViewController.h; sourceTree = "<group>"; };
+		EB46B7A91BB4017300E44E57 /* AddDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddDetailsViewController.m; sourceTree = "<group>"; };
 		EB46B7AB1BB4069700E44E57 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		EB46B7AC1BB4069700E44E57 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		EB46B7B51BB40E5700E44E57 /* Detail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Detail.h; sourceTree = "<group>"; };
@@ -56,6 +57,8 @@
 		EB46B7B71BB40E5700E44E57 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		EB46B7B81BB40E5700E44E57 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		EB46B7BB1BB40F1500E44E57 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		EBEE430F1BB93B1E00318752 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		EBEE43101BB93B1E00318752 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +108,10 @@
 				EB46B7AC1BB4069700E44E57 /* BaseViewController.m */,
 				EB46B7A51BB4015500E44E57 /* DevicesViewController.h */,
 				EB46B7A61BB4015500E44E57 /* DevicesViewController.m */,
-				EB46B7A81BB4017300E44E57 /* DetailsViewController.h */,
-				EB46B7A91BB4017300E44E57 /* DetailsViewController.m */,
+				EB46B7A81BB4017300E44E57 /* AddDetailsViewController.h */,
+				EB46B7A91BB4017300E44E57 /* AddDetailsViewController.m */,
+				EBEE430F1BB93B1E00318752 /* DetailsViewController.h */,
+				EBEE43101BB93B1E00318752 /* DetailsViewController.m */,
 				EB46B7891BB3FCD500E44E57 /* Main.storyboard */,
 				EB46B78C1BB3FCD500E44E57 /* Images.xcassets */,
 				EB46B78E1BB3FCD500E44E57 /* LaunchScreen.xib */,
@@ -258,8 +263,9 @@
 				EB46B7B91BB40E5700E44E57 /* Detail.m in Sources */,
 				EB46B7AD1BB4069700E44E57 /* BaseViewController.m in Sources */,
 				EB46B7BA1BB40E5700E44E57 /* Device.m in Sources */,
-				EB46B7AA1BB4017300E44E57 /* DetailsViewController.m in Sources */,
+				EB46B7AA1BB4017300E44E57 /* AddDetailsViewController.m in Sources */,
 				EB46B7821BB3FCD500E44E57 /* AppDelegate.m in Sources */,
+				EBEE43111BB93B1E00318752 /* DetailsViewController.m in Sources */,
 				EB46B7851BB3FCD500E44E57 /* CoreDataSample.xcdatamodeld in Sources */,
 				EB46B77F1BB3FCD500E44E57 /* main.m in Sources */,
 			);
@@ -458,6 +464,7 @@
 				EB46B7A11BB3FCD500E44E57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB46B7A21BB3FCD500E44E57 /* Build configuration list for PBXNativeTarget "CoreDataSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -466,6 +473,7 @@
 				EB46B7A41BB3FCD500E44E57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

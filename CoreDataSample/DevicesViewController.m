@@ -8,6 +8,7 @@
 
 #import "DevicesViewController.h"
 #import "AppDelegate.h"
+#import "AddDetailsViewController.h"
 #import "DetailsViewController.h"
 
 @interface DevicesViewController ()
@@ -22,6 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     NSError *error = nil;
     
@@ -33,12 +44,8 @@
     {
         NSLog(@"Error");
     }
-    
-}
+    [self.tableView reloadData];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -74,6 +81,24 @@
     
 }
 
+
+-(NSArray *)getAllDetails
+{
+    NSError *error = nil;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
+    
+    NSManagedObjectContext *context  = [self managedObjectContext];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Detail" inManagedObjectContext:context];
+
+    [fetchRequest setEntity:entityDescription];
+    
+    NSArray *result = [context executeFetchRequest:fetchRequest error:&error];
+    
+    return result;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -97,15 +122,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    
     Device *device = [_fetchResultContoller objectAtIndexPath:indexPath];
-    
     cell.textLabel.text = device.deviceName;
     cell.detailTextLabel.text = device.deviceCompany;
     
     return cell;
 }
 
+
+#pragma mark - Table view delegate
 
 /*
 // Override to support conditional editing of the table view.
@@ -114,6 +139,10 @@
     return YES;
 }
 */
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+}
 
 
 // Override to support editing the table view.
@@ -163,12 +192,28 @@
     if ([segue.identifier isEqualToString:@"addDetails"]){
         
         UINavigationController *navigationController = segue.destinationViewController;
-        DetailsViewController *detailsViewController = (DetailsViewController*)navigationController.topViewController;
+        AddDetailsViewController *detailsViewController = (AddDetailsViewController*)navigationController.topViewController;
         
         Device *device = [NSEntityDescription insertNewObjectForEntityForName:@"Device" inManagedObjectContext:[self managedObjectContext]];
         
-        detailsViewController.device = device;
+        Detail *details = [NSEntityDescription insertNewObjectForEntityForName:@"Detail" inManagedObjectContext:[self managedObjectContext]];
         
+        detailsViewController.device = device;
+        detailsViewController.details = details;
+        
+    }
+    else if ([segue.identifier isEqualToString:@"deviceDetails"])
+    {
+        UITableViewCell *cell = (UITableViewCell *) sender;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        DetailsViewController *deviceDetailsViewController = segue.destinationViewController;
+        
+        Device *device = [self.fetchResultContoller objectAtIndexPath:indexPath];
+        
+        deviceDetailsViewController.device = device;
+        deviceDetailsViewController.detail = [[self getAllDetails] objectAtIndex:indexPath.row];
     }
 
 }

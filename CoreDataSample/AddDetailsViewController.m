@@ -2,43 +2,26 @@
 //  DetailsViewController.m
 //  CoreDataSample
 //
-//  Created by cuelogic on 28/09/15.
+//  Created by cuelogic on 24/09/15.
 //  Copyright (c) 2015 Cuelogic. All rights reserved.
 //
 
-#import "DetailsViewController.h"
+#import "AddDetailsViewController.h"
 
-@interface DetailsViewController ()
+@interface AddDetailsViewController ()
 
 @end
 
-@implementation DetailsViewController
+@implementation AddDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [self setInitialData];
-
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)setInitialData
-{
-    _lblDeviceName.text = self.detail.detailName;
-    _lblDeviceVersion.text = self.detail.detailVersion;
-    _lblDeviceCompany.text = self.detail.detailCompany;
 }
 
 /*
@@ -51,4 +34,20 @@
 }
 */
 
+- (IBAction)cancel:(id)sender {
+    
+    [super cancelAndDismiss];
+}
+
+- (IBAction)done:(id)sender {
+    
+    self.device.deviceName = _txtfld_Name.text;
+    self.device.deviceCompany = _txtfld_Company.text;
+    
+    self.details.detailName = _txtfld_Name.text;
+    self.details.detailVersion = _txtfld_Version.text;
+    self.details.detailCompany = _txtfld_Company.text;
+    
+    [super saveAndDismiss];
+}
 @end
